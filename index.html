@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Javascript - Good parts </title>
+
+		<meta name="description" content="Excerpts from the book ‘Javascript: The Good Parts’ by Douglas Crockford">
+		<meta name="author" content="Manohar Shetty">
+		<meta name="author" content="Supriya Anand">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Javascript - Good parts</h1>
+					<h3>Excerpts from the book ‘Javascript: The Good Parts’ by Douglas Crockford</h3>
+					<p>
+						<small>Manohar Shetty || Supriya Anand</small>
+					</p>
+                    <blockquote cite="https://twitter.com/codefoster">
+                        &ldquo;Every developer loves and hates JavaScript a little bit.&rdquo;
+                    </blockquote>
+				</section>
+
+				<section>
+					<h2>Hello There</h2>
+					<p>
+						Javascript enables you to create interactive websites. This presentation will walk through the good parts of Javascript and how they should be leveraged in dynamizing websites.
+					</p>
+				</section>
+
+    <section>
+					<section>
+						<p>Oooh, a new language! Let me learn everything about it!</p>
+						<br>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>But ... </h2>
+                        <p class="fragment"> Languages come with problems! </p>
+                        <p class="fragment">
+                        <ul>
+                            <li class="fragment">Poorly specified</li>
+                            <li class="fragment">Portability issues</li>
+                            <li class="fragment">Difficult to read code</li>
+                        </ul>
+                        </p>
+                            <p class="fragment"> Yada yada yada ... </p>
+					</section>
+					<section>
+						<h3>So, what?! </h3> <h5>Let's not use such languages at all! </h5>
+						<br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+					</section>
+                    <section>
+                        <p>Hmm, but it does have some good parts! </p>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Quick-fix!</h2>
+                        <h3 class="fragment"> Just use the good parts!</h3>
+                        <h6 class="fragment"> Fear not! We'll tell you what those are!</h6>
+                        <a href="#/2">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+                        </a>
+                        <h6 class="fragment"> Put on your thinking cap! <br> We can't really build good stuff from something that's bad, can we? :P</h6>
+                    </section>
+				</section>
+                <section>
+                    <section>
+                        <h2>So, what's bad?</h2>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Global variables</h2>
+                        <p>No linkers. Global namespace. Variable collisions!</p>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Symbols with multiple uses</h2>
+                        <p>'+' symbol. Adds and concatenates.<br> Un-predictable and error prone</p>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Semicolon insertion</h2>
+                        <ul>
+                            <li> Semi-colons are INSERTED by the parser</li>
+                            <li> Optional semi-colons are not a “language feature” </li>
+                            <li> You are not warned!! .... 'Uh oh..'</li>
+                        </ul>
+                        <blockquote cite="Nick Ashley">
+                            &ldquo;JavaScript: where forgetting the occasional semicolon isn't necessarily the end of the world.&rdquo;
+                        </blockquote>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Not what you expect</h2>
+                        <h5> typeof() </h5>
+                        <p class="fragment">typeof('abc’) <span class="fragment"> -> string</span> <span class="fragment"> -> Nice </span></p>
+                        <p class="fragment">typeof(1) <span class="fragment"> -> number </span> <span class="fragment"> -> Good </span></p>
+                        <p class="fragment">typeof({}) <span class="fragment"> -> object </span> <span class="fragment"> -> Great </span></p>
+                        <p class="fragment">typeof([1,2,3]) <span class="fragment"> -> object </span> <span class="fragment"> -> Ooops </span> </p>
+                        <p class="fragment">typeof(null) <span class="fragment"> -> object </span> <span class="fragment"> -> WTH </span> </p>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Again..</h2>
+                        <h5> == and != </h5>
+                        <ul>
+                            <p class="fragment">‘ ’ == 0 <span class="fragment"> -> false </span></p>
+                            <p class="fragment">0 == ‘ ‘ <span class="fragment"> -> true </span> </p>
+                            <p class="fragment">false == ‘false’ <span class="fragment"> -> false </span> </p>
+                            <p class="fragment">false == ‘0’ <span class="fragment"> -> true </span> </p>
+                            <p class="fragment">false == undefined <span class="fragment"> -> false </span> </p>
+                            <p class="fragment">undefined == null <span class="fragment"> -> true </span> </p>
+                        </ul>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h4>Two errors cancel each other!</h4>
+                        <pre><code data-trim contenteditable>
+                            value = fooObject[bar]   //undefined
+if(value == null) {
+alert(bar + ‘ not found.’)
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Arithmetic/Comparison?!</h2>
+                        <p>0.1 + 0.2 !== 0.3</p>
+                        <pre>
+                            <code data-trim contenteditable>
+                                > 0.1 + 0.2 == 0.3
+false
+                            </code>
+                        </pre>
+                        <p class="fragment"> WHAT?! </p>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h4>Style is not subjective</h4>
+                        <pre>
+                            <code data-trim contenteditable>
+                                return {
+status: ‘OK’
+}
+                            </code>
+                        </pre>
+                        <pre>
+                            <code data-trim contenteditable>
+                                return
+{
+status: ‘OK’
+}
+                            </code>
+                        </pre>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h6>Okay, enough of the bad!</h6>
+                        <p> Show me the good!! </p>
+                    </section>
+				</section>
+ <section>
+                    <section>
+                        <h5>Finally, lets talk about the good.</h5>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h5>Dynamic objects</h5>
+                        <ul>
+                            <li>Members can be added to any object, any time</li>
+                            <li>Helpful to attach attributes</li>
+                        </ul>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h5>Object literals</h5>
+                        <pre>
+                            <code data-trim contenteditable>
+                            var obj = {
+            count: 2,
+            preﬁx: ‘pre_’
+            }
+                            </code>
+                        </pre>
+                        <ul>
+                            <li>Pass as options to functions</li>
+                            <li>JSON for communication, remember API's anyone?</li>
+                        </ul>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h5>Loosely typed</h5>
+                        <pre>
+                            <code data-trim contenteditable>
+                                /* JavaScript Example (loose typing) */
+var a = 13; // Number declaration
+var b = "thirteen"; // String declaration
+
+/* Java Example (strong typing) */
+int a = 13; // int declaration
+String b = "thirteen"; // String declaration
+
+                            </code>
+                        </pre>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h5>Functions are objects</h5>
+                        <ul>
+                            <li>can be passed, returned</li>
+                            <li>Have scope</li>
+                            <li>Have closure</li>
+                        </ul>
+                        <br>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h5>Lambda / closures</h5>
+                        <p>
+                            A "closure" is an expression that can have free variables together
+                            with an environment that binds those variables.
+                        <ul>
+                            <li> a closure is a reference to the local vars for a function - local vars kept alive after the function has returned </li>
+                            <li> a closure is a stack-frame which is not deallocated when the function returns. (as if a 'stack-frame' were malloc'ed instead of being on the stack!)</li>
+                        </ul>
+                        </p>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <h5>Closures, in action</h5>
+                        <pre>
+                            <code data-trim contenteditable>
+                                function sayHello2(name){
+var text = 'Hello ' + name; // local variable
+var sayAlert = function(){ alert(text); }
+return sayAlert;
+}
+> var say2 = sayHello2('abcd');
+> say2()
+'Hello abcd'
+> say2.toString()
+'function (){console.log(text);}'
+                            </code>
+                        </pre>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>That's it folks!</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
